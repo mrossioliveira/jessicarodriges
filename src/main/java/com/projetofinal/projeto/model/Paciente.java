@@ -6,14 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 @NoArgsConstructor
 @Getter(AccessLevel.PUBLIC)
 @Setter(AccessLevel.PUBLIC)
-@Entity
-public class Vacina {
-
+public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,10 +19,16 @@ public class Vacina {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "origem")
-    private String origem;
+    @Column(name="data")
+    private Date data;
 
-    @OneToMany(mappedBy = "vacina")
-    private List<Paciente> pacientes;
+    @ManyToOne
+    @JoinColumn(name="vacina")
+    private Vacina vacina;
+
+    @ManyToOne
+    @JoinColumn(name = "municipio")
+    private Municipio municipio;
+
 
 }

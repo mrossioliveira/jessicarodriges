@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter(AccessLevel.PUBLIC)
@@ -24,4 +25,6 @@ public class Municipio {
     @JoinColumn(name = "estado_id")
     private Estado estado;
 
+    @OneToMany(mappedBy = "municipio")
+    private List<Paciente> pacientes;
 }
