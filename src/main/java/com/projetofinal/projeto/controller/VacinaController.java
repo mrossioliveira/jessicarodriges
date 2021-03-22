@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("api/vacinas")
 public class VacinaController {
+    // TODO: 1. Ajustar construtor
+    // TODO: 2. Criar métodos necessários na classe VacinaService
+    // TODO: 3. Ajustar imports das classes que estão faltando. Ex: Vacina (import com.projetofinal.projeto.model.Vacina;)
+    // TODO: 4. Usar converter para mapear Entity vs DTO e sempre receber e responder DTOs nos Controllers
+
     private final VacinaService vacinaService;
     private final vacinaConverter vacinaConverter;
 
@@ -17,7 +22,7 @@ public class VacinaController {
     }
 
     @PostMapping("")
-    public VacinaDTO create(RequestBody CreateVacinaDTO vacina) {
+    public VacinaDTO create(@RequestBody CreateVacinaDTO vacina) {
         Vacina mappedVacina = this.vacinaConverter.convertToEntity(vacinas);
         return this.vacinaConverter.convertToDTO(this.vacinaService.create(mappedVacina));
     }

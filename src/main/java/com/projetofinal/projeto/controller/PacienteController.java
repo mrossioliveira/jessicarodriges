@@ -6,9 +6,16 @@ import com.projetofinal.projeto.model.Paciente;
 import com.projetofinal.projeto.service.PacienteService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/pacientes")
 public class PacienteController {
+    // TODO: 1. Ajustar construtor
+    // TODO: 2. Criar métodos necessários na classe VacinaService
+    // TODO: 3. Ajustar imports das classes que estão faltando. Ex: Vacina (import com.projetofinal.projeto.model.Vacina;)
+    // TODO: 4. Usar converter para mapear Entity vs DTO e sempre receber e responder DTOs nos Controllers
+
     private final PacienteService pacienteService;
     private final PacienteConverter pacienteConverter;
 
